@@ -7,6 +7,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.yi.androidprojectpractice.Dagger.DaggerActivity;
+import com.yi.androidprojectpractice.HandleThreadPlayGround.HandleThreadActivity;
+import com.yi.androidprojectpractice.ImageSlider.ImageSliderActivity;
+import com.yi.androidprojectpractice.RecycleViewImageList.ImageListAvtivity;
+import com.yi.androidprojectpractice.ServicePlayGround.Service.ServiceActivity;
 import com.yi.androidprojectpractice.wallpaperPolling.WallPaperPollingActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -21,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         Start.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getBaseContext(), WallPaperPollingActivity.class);
+                Intent i = new Intent(getBaseContext(), ImageListAvtivity.class);
                 startActivity(i);
             }
         });

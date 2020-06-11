@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.yi.androidprojectpractice">
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
+        android:name=".ServicePlayGround.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -16,9 +22,40 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".wallpaperPolling.WallPaperPollingActivity"/>
-        <service android:name=".wallpaperPolling.WallPaperPollingService"
-            android:permission="android.permission.BIND_JOB_SERVICE"/>
+        <activity android:name=".wallpaperPolling.WallPaperPollingActivity" />
+
+        <activity android:name=".HandleThreadPlayGround.HandleThreadActivity" />
+        <activity android:name=".Dagger.DaggerActivity"/>
+
+        <service
+            android:name=".wallpaperPolling.WallPaperPollingService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <service
+            android:name=".ServicePlayGround.IntentService.ExampleIntentService" />
+
+        <service
+            android:name=".ServicePlayGround.JobService.ExampleJobService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <service
+            android:name=".ServicePlayGround.JobIntentService.ExampleJobIntentService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <activity android:name=".ServicePlayGround.Service.ServiceActivity"/>
+        <service android:name=".ServicePlayGround.Service.ExampleService"/>
+
+        <!--<receiver android:name=".Broadcast.ExampleBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+            </intent-filter>
+        </receiver>-->
+
+        <activity android:name=".ImageSlider.ImageSliderActivity"/>
+        <activity android:name=".RecycleViewImageList.ImageListAvtivity"/>
+
     </application>
+
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
 
 </manifest>
